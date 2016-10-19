@@ -15,10 +15,10 @@ writer = csv.writer(out_file,dialect='excel')
 
 
 def con_awss3(directory,filename):										#connecting to the aws s3 server using credentials			
-	AWS_ACCESS_KEY_ID = 'AKIAIUTNN5R7FUHYBLWA'
+	
 	#bucket_name = AWS_ACCESS_KEY_ID.lower() + 'bucket'
-	conn = boto.connect_s3(AWS_ACCESS_KEY_ID,'1TTlISprYAUyU+LEaWLe0orXNb9SjPHKARzXiHuv')
-	bucket = conn.get_bucket('akiaiutnn5r7fuhyblwabucket')
+	conn = boto.connect_s3(AWS_ACCESS_KEY_ID,AWS_ACCESS_SECRET_KEY)
+	bucket = conn.get_bucket('your_bucket_name')
 	testfile = os.path.join(directory,filename)
 	print 'Uploading %s to Amazon S3 bucket %s' % \
       (testfile, 'akiaiutnn5r7fuhyblwabucket')
