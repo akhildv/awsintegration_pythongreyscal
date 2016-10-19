@@ -21,7 +21,7 @@ def con_awss3(directory,filename):										#connecting to the aws s3 server usi
 	bucket = conn.get_bucket('your_bucket_name')
 	testfile = os.path.join(directory,filename)
 	print 'Uploading %s to Amazon S3 bucket %s' % \
-      (testfile, 'akiaiutnn5r7fuhyblwabucket')
+      (testfile,'your_bucket_name')
 	k = Key(bucket)
 	k.key = filename
 	k.set_contents_from_filename(testfile,cb=percent_cb, num_cb=10)     #uploading the image files into aws s3
